@@ -4,35 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Import the 'Quicksand' font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+    /* Global styles for consistent spacing and box-sizing */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* Body styling for a full-screen centered layout */
     body {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background-color: #1a1a1a; /* Dark background  */
-      font-family: Arial, sans-serif;
+      min-height: 100vh; /* Ensure the body covers the full height of the viewport */
+      background-color: #1a1a1a; /* Dark background for high contrast */
+      font-family: 'Quicksand', sans-serif; /* Apply the imported font */
     }
 
+    /* Main container for the app */
     .app-container {
-      width: 500px; 
-      height:950px;
-      background: linear-gradient(to bottom, #F87AD8, #CBC880); /* Gradient */
-      border-radius: 42px;
+      width: 500px; /* Fixed width for a consistent layout */
+      height: 950px; /* Fixed height for the app's interface */
+      background: linear-gradient(to bottom, #F87AD8, #CBC880); /* Vertical gradient for visual interest */
+      border-radius: 42px; /* Rounded corners for a modern look */
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 20px; /* Inner spacing for child elements */
+    }
+
+    /* Styling for the welcome banner at the top */
+    .welcome-banner {
+      width: 90%; /* Occupies most of the app container's width */
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      color: #AA4073; /* Contrasting text color */
+      border-radius: 20px; /* Rounded corners for a soft appearance */
+      padding: 15px 20px; /* Padding for spacing around text */
+      display: flex;
+      justify-content: space-between; /* Space out text and emoji */
+      align-items: center; /* Align content vertically */
+      font-size: 28px; /* Larger text for prominence */
+      font-weight: 600; /* Slightly bold font for readability */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      margin-top: 20px; /* Space between the banner and the container's top */
+    }
+
+    /* Additional styling for the emoji in the banner */
+    .welcome-banner span {
+      font-size: 28px; /* Match font size with the text */
     }
   </style>
 </head>
 <body>
+  <!-- Main container housing the app's components -->
   <div class="app-container">
+    <!-- Welcome banner greeting the user -->
+    <div class="welcome-banner">
+      Welcome, Naim!
+      <span>👋</span>
+    </div>
   </div>
 </body>
 </html>
