@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
   <title>Wellbeing App</title>
-  <link rel="stylesheet" href="index.css"> <!-- Link to external CSS file -->
 </head>
 <body>
   <div class="app-container">
     <div class="welcome-banner">
       Welcome, <span id="user-name">Guest</span>! <span>👋</span>
     </div>
+    <div class="box-container">
+      <div class="box left">
+        <div class="day" id="yesterday-day"></div>
+        <div class="date" id="yesterday-date"></div>
+        <div class="month" id="yesterday-month"></div>
+      </div>
+      <div class="box middle">
+        <div class="day" id="today-day"></div>
+        <div class="date" id="today-date"></div>
+        <div class="month" id="today-month"></div>
+      </div>
+      <div class="box right">
+        <div class="day" id="tomorrow-day"></div>
+        <div class="date" id="tomorrow-date"></div>
+        <div class="month" id="tomorrow-month"></div>
+      </div>
+    </div>
 
-    <!-- Popup Overlay -->
     <div class="popup-overlay" id="popup">
       <div class="popup">
         <h2>Welcome! What's your name?</h2>
@@ -21,37 +38,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Check if the user's name is already saved
-    const savedName = localStorage.getItem('userName');
-    const nameSpan = document.getElementById('user-name');
-    const popup = document.getElementById('popup');
-
-    if (savedName) {
-      // If name is saved, display it in the banner and hide the popup
-      nameSpan.textContent = savedName;
-      popup.style.display = 'none';
-    }
-
-    // Function to save the user's name
-    function saveName() {
-      const nameInput = document.getElementById('name-input');
-      const userName = nameInput.value.trim();
-
-      if (userName) {
-        // Save the name to localStorage
-        localStorage.setItem('userName', userName);
-
-        // Update the welcome banner
-        nameSpan.textContent = userName;
-
-        // Hide the popup
-        popup.style.display = 'none';
-      } else {
-        alert("Please enter a valid name!");
-      }
-    }
-  </script>
+  <script src="index.js"></script>
 </body>
 </html>
